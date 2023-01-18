@@ -4,14 +4,13 @@
 
 Test with:
 
+`nvm use`
+
 `pnpm install`
 
 `pnpm start`
 
-See an error in the terminal.
+See an error in the terminal: `Reading 'locale' outside of context.`
 
-When following the guidelines of https://github.com/mhevery/qwik-i18n, we setup
-a method $localize that calls `getLocale`. `getLocale` doesnt return a locale
-which is causing translations to not work.
-
-In `src/routes/index.ts` there are 2 calls to geLocale to see them fail.
+`getLocale` in `src/i18n.ts` always returns empty, unless a default locale is
+passed in, then it only returns the default.
