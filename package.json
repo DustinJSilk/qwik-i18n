@@ -1,0 +1,45 @@
+{
+  "name": "my-qwik-basic-starter",
+  "description": "App with Routing built-in (recommended)",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "echo 'Run \"npm run qwik add\" to install a server adaptor'",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "preview": "qwik build preview && vite preview --open",
+    "i18n.extract": "node_modules/.bin/localize-extract -s \"dist/build/*.js\" -f json -o src/locale/message.en.json",
+    "i18n.translate": "node_modules/.bin/localize-translate -s \"*.js\" -t src/locale/message.*.json -o dist/build/{{LOCALE}} -r ./dist/build",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik"
+  },
+  "devDependencies": {
+    "@angular/compiler": "^15.0.4",
+    "@angular/compiler-cli": "^15.1.0",
+    "@angular/localize": "^15.0.4",
+    "@builder.io/qwik": "0.16.2",
+    "@builder.io/qwik-city": "0.1.0-beta9",
+    "@types/eslint": "8.4.10",
+    "@types/node": "^18.11.18",
+    "@types/node-fetch": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/parser": "5.48.2",
+    "eslint": "8.32.0",
+    "eslint-plugin-qwik": "0.16.2",
+    "node-fetch": "3.3.0",
+    "prettier": "2.8.3",
+    "typescript": "4.9.4",
+    "undici": "5.15.0",
+    "vite": "4.0.4",
+    "vite-tsconfig-paths": "4.0.3"
+  }
+}
